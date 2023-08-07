@@ -11,7 +11,7 @@ import SwiftUI
 struct Minimalist_WatchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreen()
         }
     }
 }

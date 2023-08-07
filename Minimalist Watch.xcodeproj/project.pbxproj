@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		228542C02A7B8DAF00AE1A14 /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */; };
 		22C5BFAE2A794FA400384FF7 /* Minimalist_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */; };
-		22C5BFB02A794FA400384FF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAF2A794FA400384FF7 /* ContentView.swift */; };
+		22C5BFB02A794FA400384FF7 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAF2A794FA400384FF7 /* Clock.swift */; };
 		22C5BFB22A794FA600384FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5BFB12A794FA600384FF7 /* Assets.xcassets */; };
 		22C5BFB62A794FA600384FF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5BFB52A794FA600384FF7 /* Preview Assets.xcassets */; };
+		22C5BFBD2A7A3E5A00384FF7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFBC2A7A3E5900384FF7 /* SettingsView.swift */; };
+		22C5BFC12A7A3FD800384FF7 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFC02A7A3FD800384FF7 /* CountdownTimer.swift */; };
+		22C5BFC32A7A3FDF00384FF7 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFC22A7A3FDF00384FF7 /* Stopwatch.swift */; };
+		22C5BFC52A7A3FEF00384FF7 /* WorldClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFC42A7A3FEF00384FF7 /* WorldClock.swift */; };
+		22C5BFC72A7A414000384FF7 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFC62A7A414000384FF7 /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundAnimation.swift; sourceTree = "<group>"; };
 		22C5BFAA2A794FA400384FF7 /* Minimalist Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minimalist Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimalist_WatchApp.swift; sourceTree = "<group>"; };
-		22C5BFAF2A794FA400384FF7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		22C5BFAF2A794FA400384FF7 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		22C5BFB12A794FA600384FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22C5BFB32A794FA600384FF7 /* Minimalist_Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Minimalist_Watch.entitlements; sourceTree = "<group>"; };
 		22C5BFB52A794FA600384FF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22C5BFBC2A7A3E5900384FF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		22C5BFC02A7A3FD800384FF7 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
+		22C5BFC22A7A3FDF00384FF7 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		22C5BFC42A7A3FEF00384FF7 /* WorldClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClock.swift; sourceTree = "<group>"; };
+		22C5BFC62A7A414000384FF7 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +65,13 @@
 			isa = PBXGroup;
 			children = (
 				22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */,
-				22C5BFAF2A794FA400384FF7 /* ContentView.swift */,
+				22C5BFAF2A794FA400384FF7 /* Clock.swift */,
+				22C5BFC62A7A414000384FF7 /* MainScreen.swift */,
+				22C5BFBC2A7A3E5900384FF7 /* SettingsView.swift */,
+				22C5BFC02A7A3FD800384FF7 /* CountdownTimer.swift */,
+				22C5BFC22A7A3FDF00384FF7 /* Stopwatch.swift */,
+				228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */,
+				22C5BFC42A7A3FEF00384FF7 /* WorldClock.swift */,
 				22C5BFB12A794FA600384FF7 /* Assets.xcassets */,
 				22C5BFB32A794FA600384FF7 /* Minimalist_Watch.entitlements */,
 				22C5BFB42A794FA600384FF7 /* Preview Content */,
@@ -139,8 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22C5BFB02A794FA400384FF7 /* ContentView.swift in Sources */,
+				22C5BFBD2A7A3E5A00384FF7 /* SettingsView.swift in Sources */,
+				228542C02A7B8DAF00AE1A14 /* BackgroundAnimation.swift in Sources */,
+				22C5BFC72A7A414000384FF7 /* MainScreen.swift in Sources */,
+				22C5BFC12A7A3FD800384FF7 /* CountdownTimer.swift in Sources */,
+				22C5BFC32A7A3FDF00384FF7 /* Stopwatch.swift in Sources */,
+				22C5BFB02A794FA400384FF7 /* Clock.swift in Sources */,
 				22C5BFAE2A794FA400384FF7 /* Minimalist_WatchApp.swift in Sources */,
+				22C5BFC52A7A3FEF00384FF7 /* WorldClock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +291,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Minimalist Watch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Minimal Clock";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -277,12 +303,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.muizidn.Minimalist-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = com.muiz.idn.MinimalClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -303,6 +329,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Minimalist Watch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Minimal Clock";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -313,12 +341,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.muizidn.Minimalist-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = com.muiz.idn.MinimalClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
