@@ -10,6 +10,7 @@
 		228542C02A7B8DAF00AE1A14 /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */; };
 		2293651B2A883E7B00F49934 /* TimerDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293651A2A883E7B00F49934 /* TimerDateTests.swift */; };
 		229365222A88440A00F49934 /* TimerDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229365212A88440A00F49934 /* TimerDate.swift */; };
+		229365252A88462200F49934 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229365242A88462200F49934 /* TimerViewModel.swift */; };
 		22C5BFAE2A794FA400384FF7 /* Minimalist_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */; };
 		22C5BFB02A794FA400384FF7 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAF2A794FA400384FF7 /* Clock.swift */; };
 		22C5BFB22A794FA600384FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5BFB12A794FA600384FF7 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		229365182A883E7B00F49934 /* MinimalistWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimalistWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2293651A2A883E7B00F49934 /* TimerDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDateTests.swift; sourceTree = "<group>"; };
 		229365212A88440A00F49934 /* TimerDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDate.swift; sourceTree = "<group>"; };
+		229365242A88462200F49934 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		22C5BFAA2A794FA400384FF7 /* Minimalist Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minimalist Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimalist_WatchApp.swift; sourceTree = "<group>"; };
 		22C5BFAF2A794FA400384FF7 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
@@ -75,6 +77,16 @@
 			path = MinimalistWatchTests;
 			sourceTree = "<group>";
 		};
+		229365232A88461100F49934 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				22C5BFC02A7A3FD800384FF7 /* CountdownTimer.swift */,
+				229365242A88462200F49934 /* TimerViewModel.swift */,
+				229365212A88440A00F49934 /* TimerDate.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		22C5BFA12A794FA400384FF7 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +112,7 @@
 				22C5BFAF2A794FA400384FF7 /* Clock.swift */,
 				22C5BFC62A7A414000384FF7 /* MainScreen.swift */,
 				22C5BFBC2A7A3E5900384FF7 /* SettingsView.swift */,
-				22C5BFC02A7A3FD800384FF7 /* CountdownTimer.swift */,
-				229365212A88440A00F49934 /* TimerDate.swift */,
+				229365232A88461100F49934 /* Timer */,
 				22C5BFC22A7A3FDF00384FF7 /* Stopwatch.swift */,
 				228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */,
 				22C5BFC42A7A3FEF00384FF7 /* WorldClock.swift */,
@@ -228,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229365252A88462200F49934 /* TimerViewModel.swift in Sources */,
 				22C5BFBD2A7A3E5A00384FF7 /* SettingsView.swift in Sources */,
 				228542C02A7B8DAF00AE1A14 /* BackgroundAnimation.swift in Sources */,
 				22C5BFC72A7A414000384FF7 /* MainScreen.swift in Sources */,
