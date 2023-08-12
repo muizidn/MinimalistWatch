@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		228542C02A7B8DAF00AE1A14 /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */; };
+		2293651B2A883E7B00F49934 /* TimerDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293651A2A883E7B00F49934 /* TimerDateTests.swift */; };
+		229365222A88440A00F49934 /* TimerDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229365212A88440A00F49934 /* TimerDate.swift */; };
 		22C5BFAE2A794FA400384FF7 /* Minimalist_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */; };
 		22C5BFB02A794FA400384FF7 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFAF2A794FA400384FF7 /* Clock.swift */; };
 		22C5BFB22A794FA600384FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5BFB12A794FA600384FF7 /* Assets.xcassets */; };
@@ -19,8 +21,21 @@
 		22C5BFC72A7A414000384FF7 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5BFC62A7A414000384FF7 /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2293651C2A883E7B00F49934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22C5BFA22A794FA400384FF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22C5BFA92A794FA400384FF7;
+			remoteInfo = "Minimalist Watch";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundAnimation.swift; sourceTree = "<group>"; };
+		229365182A883E7B00F49934 /* MinimalistWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimalistWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2293651A2A883E7B00F49934 /* TimerDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDateTests.swift; sourceTree = "<group>"; };
+		229365212A88440A00F49934 /* TimerDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDate.swift; sourceTree = "<group>"; };
 		22C5BFAA2A794FA400384FF7 /* Minimalist Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minimalist Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C5BFAD2A794FA400384FF7 /* Minimalist_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimalist_WatchApp.swift; sourceTree = "<group>"; };
 		22C5BFAF2A794FA400384FF7 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
@@ -35,6 +50,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		229365152A883E7B00F49934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22C5BFA72A794FA400384FF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +67,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		229365192A883E7B00F49934 /* MinimalistWatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				2293651A2A883E7B00F49934 /* TimerDateTests.swift */,
+			);
+			path = MinimalistWatchTests;
+			sourceTree = "<group>";
+		};
 		22C5BFA12A794FA400384FF7 = {
 			isa = PBXGroup;
 			children = (
 				22C5BFAC2A794FA400384FF7 /* Minimalist Watch */,
+				229365192A883E7B00F49934 /* MinimalistWatchTests */,
 				22C5BFAB2A794FA400384FF7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				22C5BFAA2A794FA400384FF7 /* Minimalist Watch.app */,
+				229365182A883E7B00F49934 /* MinimalistWatchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +101,7 @@
 				22C5BFC62A7A414000384FF7 /* MainScreen.swift */,
 				22C5BFBC2A7A3E5900384FF7 /* SettingsView.swift */,
 				22C5BFC02A7A3FD800384FF7 /* CountdownTimer.swift */,
+				229365212A88440A00F49934 /* TimerDate.swift */,
 				22C5BFC22A7A3FDF00384FF7 /* Stopwatch.swift */,
 				228542BF2A7B8DAF00AE1A14 /* BackgroundAnimation.swift */,
 				22C5BFC42A7A3FEF00384FF7 /* WorldClock.swift */,
@@ -90,6 +123,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		229365172A883E7B00F49934 /* MinimalistWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 229365202A883E7B00F49934 /* Build configuration list for PBXNativeTarget "MinimalistWatchTests" */;
+			buildPhases = (
+				229365142A883E7B00F49934 /* Sources */,
+				229365152A883E7B00F49934 /* Frameworks */,
+				229365162A883E7B00F49934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2293651D2A883E7B00F49934 /* PBXTargetDependency */,
+			);
+			name = MinimalistWatchTests;
+			productName = MinimalistWatchTests;
+			productReference = 229365182A883E7B00F49934 /* MinimalistWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		22C5BFA92A794FA400384FF7 /* Minimalist Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22C5BFB92A794FA600384FF7 /* Build configuration list for PBXNativeTarget "Minimalist Watch" */;
@@ -117,6 +168,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					229365172A883E7B00F49934 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 22C5BFA92A794FA400384FF7;
+					};
 					22C5BFA92A794FA400384FF7 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -136,11 +191,19 @@
 			projectRoot = "";
 			targets = (
 				22C5BFA92A794FA400384FF7 /* Minimalist Watch */,
+				229365172A883E7B00F49934 /* MinimalistWatchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		229365162A883E7B00F49934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22C5BFA82A794FA400384FF7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +216,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		229365142A883E7B00F49934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2293651B2A883E7B00F49934 /* TimerDateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22C5BFA62A794FA400384FF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,6 +231,7 @@
 				22C5BFBD2A7A3E5A00384FF7 /* SettingsView.swift in Sources */,
 				228542C02A7B8DAF00AE1A14 /* BackgroundAnimation.swift in Sources */,
 				22C5BFC72A7A414000384FF7 /* MainScreen.swift in Sources */,
+				229365222A88440A00F49934 /* TimerDate.swift in Sources */,
 				22C5BFC12A7A3FD800384FF7 /* CountdownTimer.swift in Sources */,
 				22C5BFC32A7A3FDF00384FF7 /* Stopwatch.swift in Sources */,
 				22C5BFB02A794FA400384FF7 /* Clock.swift in Sources */,
@@ -170,7 +242,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2293651D2A883E7B00F49934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22C5BFA92A794FA400384FF7 /* Minimalist Watch */;
+			targetProxy = 2293651C2A883E7B00F49934 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2293651E2A883E7B00F49934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDSLU2QT5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muizidn.MinimalistWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Minimalist Watch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Minimalist Watch";
+			};
+			name = Debug;
+		};
+		2293651F2A883E7B00F49934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDSLU2QT5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muizidn.MinimalistWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Minimalist Watch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Minimalist Watch";
+			};
+			name = Release;
+		};
 		22C5BFB72A794FA600384FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -359,6 +483,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		229365202A883E7B00F49934 /* Build configuration list for PBXNativeTarget "MinimalistWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2293651E2A883E7B00F49934 /* Debug */,
+				2293651F2A883E7B00F49934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22C5BFA52A794FA400384FF7 /* Build configuration list for PBXProject "Minimalist Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
