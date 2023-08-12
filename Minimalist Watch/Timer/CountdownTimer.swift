@@ -98,13 +98,7 @@ private struct CountdownTimerBody: View {
                     vm.isCountingDown.toggle()
                 }
                 .font(.largeTitle)
-                if vm.isCountingDown {
-                    Button("+1 Minute") {
-                        vm.addOneMinute()
-                    }
-                    .font(.title)
-                    .padding()
-                }
+                AddOneMinute()
                 if !vm.isCountingDown {
                     if case .custom = vm.timerPresets[vm.selectedPreset] {
                         Button(vm.isEditingCustomTimer ? "Done" : "Edit") {
@@ -122,6 +116,21 @@ private struct CountdownTimerBody: View {
                 }
             }
             .padding()
+        }
+    }
+    
+    struct AddOneMinute: View {
+        @EnvironmentObject var vm: CountdownTimerViewModel
+        var body: some View {
+            if vm.isCountingDown {
+                Button("+1 Minute") {
+                    vm.addOneMinute()
+                }
+                .font(.title)
+                .padding()
+            } else {
+                EmptyView()
+            }
         }
     }
 }
