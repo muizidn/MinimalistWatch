@@ -57,6 +57,10 @@ final class CountdownTimerViewModel: ObservableObject {
         .minute(5),
     ]
     
+    func addOneMinute() {
+        currentDate = currentDate.addingTimeInterval(60)
+    }
+    
     func dateUpdate() {
         currentDate = currentDate.advanced(by: -1)
         finishTimerIfNeeded()
@@ -139,7 +143,7 @@ struct CountdownTimer: View {
                     .font(.largeTitle)
                     if vm.isCountingDown {
                         Button("+1 Minute") {
-                            
+                            vm.addOneMinute()
                         }
                         .font(.title)
                         .padding()
