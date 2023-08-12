@@ -11,6 +11,7 @@ struct BackgroundAnimation: View {
     
     let screen = UIScreen.main.bounds
     @State var isAnimated = false
+    let id = UUID().uuidString
     
     let color_1: Color
     let color_2: Color
