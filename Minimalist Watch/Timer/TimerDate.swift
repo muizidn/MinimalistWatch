@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TimerDate {
+struct TimerDate: Hashable {
     private(set) var hour: Int
     private(set) var minute: Int
     private(set) var second: Int
@@ -70,4 +70,6 @@ struct TimerDate {
             second = 0
         }
     }
+    
+    static let zero: TimerDate = .init([])
 }

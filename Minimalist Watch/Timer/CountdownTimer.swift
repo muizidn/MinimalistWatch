@@ -12,31 +12,50 @@ let second: TimeInterval = 60
 enum TimerPreset: Identifiable, Hashable {
     var id: String { description }
     
-    case custom(TimeInterval)
-    case second(TimeInterval)
-    case minute(TimeInterval)
+    case custom(TimerDate)
+    case time(TimerDate)
     
     var description: String {
         switch self {
         case .custom:
             return "Custom"
-        case .second(let timeInterval):
-            return "\(timeInterval) seconds"
-        case .minute(let timeInterval):
-            return "\(timeInterval) minutes"
+        case .time(let timer):
+            return timer.stringRepresentation()
         }
+    }
+}
+
+extension TimerDate {
+    var hourRepresentation: String {
+        String(format: "%02d", hour)
     }
     
-    var value: TimeInterval {
-        switch self {
-        case .custom(let timeInterval):
-            return timeInterval
-        case .second(let timeInterval):
-            return timeInterval
-        case .minute(let timeInterval):
-            return timeInterval * 60
-        }
+    var minuteRepresentation: String {
+        String(format: "%02d", minute)
     }
+    
+    var secondRepresentation: String {
+        String(format: "%02d", second)
+    }
+    
+    func stringRepresentation() -> String {
+        var components: [String] = []
+        
+        if hour > 0 {
+            components.append(hourRepresentation + "h")
+        }
+        
+        if minute > 0 {
+            components.append(minuteRepresentation + "m")
+        }
+        
+        if second > 0 {
+            components.append(secondRepresentation + "s")
+        }
+        
+        return components.joined(separator: " ")
+    }
+    
 }
 
 struct CountdownTimer: View {
@@ -50,11 +69,11 @@ struct CountdownTimer: View {
                     CustomCountdownTimer()
                 } else {
                     HStack {
-                        Text(vm.currentTimer.hour.description)
+                        Text(vm.currentTimer.hourRepresentation)
                         Text("h")
-                        Text(vm.currentTimer.minute.description)
+                        Text(vm.currentTimer.minuteRepresentation)
                         Text("m")
-                        Text(vm.currentTimer.second.description)
+                        Text(vm.currentTimer.secondRepresentation)
                         Text("s")
                     }
                     .font(.system(size: 50, weight: .heavy))
@@ -72,7 +91,7 @@ struct CountdownTimer: View {
                         .padding()
                     }
                     if !vm.isCountingDown {
-                        if case .custom = vm.selectedPreset {
+                        if case .custom = vm.timerPresets[vm.selectedPreset] {
                             Button(vm.isEditingCustomTimer ? "Done" : "Edit") {
                                 vm.isEditingCustomTimer.toggle()
                             }
@@ -80,8 +99,8 @@ struct CountdownTimer: View {
                             .padding()
                         }
                         Picker("Select Time", selection: $vm.selectedPreset) {
-                            ForEach(vm.timerPresets) { i in
-                                Text(i.description).tag(i)
+                            ForEach(vm.timerPresets.indices, id: \.self) { i in
+                                Text(vm.timerPresets[i].description).tag(i)
                             }
                         }
                         .pickerStyle(WheelPickerStyle())

@@ -9,23 +9,26 @@ import Foundation
 import Combine
 
 final class CountdownTimerViewModel: ObservableObject {
-    @Published var selectedPreset = TimerPreset.second(10) {
-        didSet {
-            currentDate =  .init(timeIntervalSince1970: selectedPreset.value)
-        }
-    }
-    private var currentDate = Date(timeIntervalSince1970: TimerPreset.second(10).value)
-    @Published var currentTimer = TimerDate(hour: 0, minute: 0, second: 0)
+    @Published var currentTimer = TimerDate(hour: 0, minute: 0, second: 10)
     @Published var isCountingDown = false
     @Published var isEditingCustomTimer = false
     private(set) var timerPresets: [TimerPreset] = [
-        .custom(0),
-        .second(10),
-        .second(30),
-        .minute(1),
-        .minute(3),
-        .minute(5),
+        .custom(TimerDate(hour: 0, minute: 0, second: 0)),
+        .time(TimerDate(hour: 0, minute: 0, second: 10)),
+        .time(TimerDate(hour: 0, minute: 0, second: 30)),
+        .time(TimerDate(hour: 0, minute: 1, second: 0)),
+        .time(TimerDate(hour: 0, minute: 3, second: 0)),
+        .time(TimerDate(hour: 0, minute: 5, second: 0)),
     ]
+    @Published var selectedPreset = 1 {
+        didSet {
+            switch timerPresets[selectedPreset] {
+            case .custom(let timer), .time(let timer):
+                currentTimer = timer
+            }
+            
+        }
+    }
     
     func addOneMinute() {
         currentTimer.addOneMinute()
@@ -52,36 +55,21 @@ final class CountdownTimerViewModel: ObservableObject {
             customTimerInput = Array(customTimerInput.dropFirst())
         }
         
-        let timeInterval = convertArrayToTimeInterval(customTimerInput)
-        
-        selectedPreset = .custom(timeInterval)
-        timerPresets[0] = selectedPreset
-        
+        let timer = TimerDate.init(customTimerInput)
+        if selectedPreset == 0 {
+            currentTimer = timer
+        }
+        timerPresets[0] = .custom(timer)
     }
     
     func deleteLastInput() {
         customTimerInput.insert(0, at: 0)
         customTimerInput.removeLast()
         
-        let timeInterval = convertArrayToTimeInterval(customTimerInput)
-        
-        selectedPreset = .custom(timeInterval)
-        timerPresets[0] = selectedPreset
-    }
-    
-    func convertArrayToTimeInterval(_ array: [Int]) -> TimeInterval {
-        var timeInterval: TimeInterval = 0
-        let multiplier: [Int:TimeInterval] = [
-            0:10*60*60,
-            1:60*60,
-            2:10*60,
-            3:60,
-            4:10,
-            5:1,
-        ]
-        for (i, el) in array.enumerated() {
-            timeInterval += TimeInterval(el) * (multiplier[i] ?? 1)
+        let timer = TimerDate.init(customTimerInput)
+        if selectedPreset == 0 {
+            currentTimer = timer
         }
-        return timeInterval
+        timerPresets[0] = .custom(timer)
     }
 }
