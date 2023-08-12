@@ -45,7 +45,8 @@ final class CountdownTimerViewModel: ObservableObject {
             currentDate =  .init(timeIntervalSince1970: selectedPreset.value)
         }
     }
-    @Published var currentDate = Date(timeIntervalSince1970: TimerPreset.second(10).value)
+    private var currentDate = Date(timeIntervalSince1970: TimerPreset.second(10).value)
+    @Published var currentTimer = TimerDate(hour: 0, minute: 0, second: 0)
     @Published var isCountingDown = false
     @Published var isEditingCustomTimer = false
     private(set) var timerPresets: [TimerPreset] = [
@@ -127,11 +128,11 @@ struct CountdownTimer: View {
                     CustomCountdownTimer()
                 } else {
                     HStack {
-                        Text(getHour())
+                        Text(vm.currentTimer.hour.description)
                         Text("h")
-                        Text(getMinute())
+                        Text(vm.currentTimer.minute.description)
                         Text("m")
-                        Text(getSecond())
+                        Text(vm.currentTimer.second.description)
                         Text("s")
                     }
                     .font(.system(size: 50, weight: .heavy))
@@ -173,27 +174,6 @@ struct CountdownTimer: View {
                 vm.dateUpdate()
             }
         }
-    }
-    
-    let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.timeZone = .init(secondsFromGMT: 0)
-        return df
-    }()
-    
-    func getHour() -> String {
-        dateFormatter.dateFormat = "HH"
-        return dateFormatter.string(from: vm.currentDate)
-    }
-    
-    func getMinute() -> String {
-        dateFormatter.dateFormat = "mm"
-        return dateFormatter.string(from: vm.currentDate)
-    }
-    
-    func getSecond() -> String {
-        dateFormatter.dateFormat = "ss"
-        return dateFormatter.string(from: vm.currentDate)
     }
 }
 
@@ -268,27 +248,6 @@ struct CustomCountdownTimer: View {
             }
             .padding()
         }
-    }
-    
-    let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.timeZone = .init(secondsFromGMT: 0)
-        return df
-    }()
-    
-    func getHour() -> String {
-        dateFormatter.dateFormat = "HH"
-        return dateFormatter.string(from: vm.currentDate)
-    }
-    
-    func getMinute() -> String {
-        dateFormatter.dateFormat = "mm"
-        return dateFormatter.string(from: vm.currentDate)
-    }
-    
-    func getSecond() -> String {
-        dateFormatter.dateFormat = "ss"
-        return dateFormatter.string(from: vm.currentDate)
     }
 }
 
