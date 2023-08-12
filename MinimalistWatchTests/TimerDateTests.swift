@@ -124,4 +124,20 @@ final class TimerDateTests: XCTestCase {
         XCTAssertEqual(timer.second, 30)
     }
     
+    func testAddOneMinute() {
+        var timer = TimerDate(hour: 1, minute: 1, second: 30)
+        timer.addOneMinute()
+        XCTAssertEqual(timer.hour, 1)
+        XCTAssertEqual(timer.minute, 2)
+        XCTAssertEqual(timer.second, 30)
+    }
+    
+    func testAddOneMinuteWrapToHour() {
+        var timer = TimerDate(hour: 1, minute: 59, second: 30)
+        timer.addOneMinute()
+        XCTAssertEqual(timer.hour, 2)
+        XCTAssertEqual(timer.minute, 0)
+        XCTAssertEqual(timer.second, 30)
+    }
+    
 }

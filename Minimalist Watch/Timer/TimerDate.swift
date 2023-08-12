@@ -38,6 +38,19 @@ struct TimerDate {
         }
     }
     
+    mutating func addOneMinute() {
+        if minute >= 59 {
+            minute = 0
+            addOneHour()
+        } else {
+            minute += 1
+        }
+    }
+    
+    mutating private func addOneHour() {
+        hour = hour + 1
+    }
+    
     mutating private func reduceMinutes(_ unit: Int) {
         if minute >= unit {
             minute -= unit

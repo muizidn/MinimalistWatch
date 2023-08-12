@@ -28,16 +28,16 @@ final class CountdownTimerViewModel: ObservableObject {
     ]
     
     func addOneMinute() {
-        currentDate = currentDate.addingTimeInterval(60)
+        currentTimer.addOneMinute()
     }
     
     func dateUpdate() {
-        currentDate = currentDate.advanced(by: -1)
+        currentTimer.reduce()
         finishTimerIfNeeded()
     }
     
     private func finishTimerIfNeeded() {
-        let isFinish = currentDate.timeIntervalSince1970 == 0
+        let isFinish = currentTimer.hour == 0 && currentTimer.minute == 0 && currentTimer.second == 0
         if isFinish {
             isCountingDown = false
         }
