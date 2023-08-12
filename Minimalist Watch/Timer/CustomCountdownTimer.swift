@@ -27,12 +27,8 @@ struct CustomCountdownTimer: View {
         [.number(7), .number(8), .number(9)],
         [.done, .number(0), .delete],
     ]
+    
     var body: some View {
-        Button("Done") {
-            vm.isEditingCustomTimer.toggle()
-        }
-    }
-    var _body: some View {
         VStack {
             HStack {
                 Text(

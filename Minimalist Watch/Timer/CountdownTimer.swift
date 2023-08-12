@@ -64,56 +64,64 @@ struct CountdownTimer: View {
     var body: some View {
         ZStack {
             BackgroundAnimation(color_1: .red, color_2: .red, color_3: .red)
-            VStack {
-                if vm.isEditingCustomTimer {
-                    CustomCountdownTimer()
-                } else {
-                    HStack {
-                        Text(vm.currentTimer.hourRepresentation)
-                        Text("h")
-                        Text(vm.currentTimer.minuteRepresentation)
-                        Text("m")
-                        Text(vm.currentTimer.secondRepresentation)
-                        Text("s")
-                    }
-                    .font(.system(size: 50, weight: .heavy))
-                    .lineLimit(1)
-                    Spacer().frame(height: 50)
-                    Button(!vm.isCountingDown ? "Start" : "Stop") {
-                        vm.isCountingDown.toggle()
-                    }
-                    .font(.largeTitle)
-                    if vm.isCountingDown {
-                        Button("+1 Minute") {
-                            vm.addOneMinute()
-                        }
-                        .font(.title)
-                        .padding()
-                    }
-                    if !vm.isCountingDown {
-                        if case .custom = vm.timerPresets[vm.selectedPreset] {
-                            Button(vm.isEditingCustomTimer ? "Done" : "Edit") {
-                                vm.isEditingCustomTimer.toggle()
-                            }
-                            .font(.callout)
-                            .padding()
-                        }
-                        Picker("Select Time", selection: $vm.selectedPreset) {
-                            ForEach(vm.timerPresets.indices, id: \.self) { i in
-                                Text(vm.timerPresets[i].description).tag(i)
-                            }
-                        }
-                        .pickerStyle(WheelPickerStyle())
-                    }
-                }
-            }
-            .padding()
+            CountdownTimerBody()
         }
         .environmentObject(vm)
         .onReceive(timer) { input in
             if vm.isCountingDown {
                 vm.dateUpdate()
             }
+        }
+    }
+}
+
+private struct CountdownTimerBody: View {
+    @EnvironmentObject var vm: CountdownTimerViewModel
+    var body: some View {
+        if vm.isEditingCustomTimer {
+            CustomCountdownTimer()
+                .padding()
+        } else {
+            VStack {
+                HStack {
+                    Text(vm.currentTimer.hourRepresentation)
+                    Text("h")
+                    Text(vm.currentTimer.minuteRepresentation)
+                    Text("m")
+                    Text(vm.currentTimer.secondRepresentation)
+                    Text("s")
+                }
+                .font(.system(size: 50, weight: .heavy))
+                .lineLimit(1)
+                Spacer().frame(height: 50)
+                Button(!vm.isCountingDown ? "Start" : "Stop") {
+                    vm.isCountingDown.toggle()
+                }
+                .font(.largeTitle)
+                if vm.isCountingDown {
+                    Button("+1 Minute") {
+                        vm.addOneMinute()
+                    }
+                    .font(.title)
+                    .padding()
+                }
+                if !vm.isCountingDown {
+                    if case .custom = vm.timerPresets[vm.selectedPreset] {
+                        Button(vm.isEditingCustomTimer ? "Done" : "Edit") {
+                            vm.isEditingCustomTimer.toggle()
+                        }
+                        .font(.callout)
+                        .padding()
+                    }
+                    Picker("Select Time", selection: $vm.selectedPreset) {
+                        ForEach(vm.timerPresets.indices, id: \.self) { i in
+                            Text(vm.timerPresets[i].description).tag(i)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                }
+            }
+            .padding()
         }
     }
 }
