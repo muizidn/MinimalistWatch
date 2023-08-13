@@ -27,17 +27,18 @@ struct Stopwatch: View {
                 }
                 .font(.system(size: 50, weight: .heavy))
                 Text(getMiliSecond())
-                .lineLimit(1)
+                    .lineLimit(1)
                 Spacer().frame(height: 50)
                 
                 if !laps.isEmpty {
-                    List {
-                        ForEach(laps) { lap in
-                            Text(lap.description)
-                                .frame(height: 50)
+                    ScrollView {
+                        LazyVStack(spacing: 0) {
+                            ForEach(laps, id: \.timeIntervalSince1970) { lap in
+                                LapRow(lap: formatLapTime(lap))
+                                    .frame(height: 50)
+                            }
                         }
                     }
-                    .background(Color.blue)
                     .frame(height: 300)
                 }
                 
@@ -67,10 +68,15 @@ struct Stopwatch: View {
     }
     
     let dateFormatter: DateFormatter = {
-       let df = DateFormatter()
+        let df = DateFormatter()
         df.timeZone = .init(secondsFromGMT: 0)
         return df
     }()
+    
+    func formatLapTime(_ date: Date) -> String {
+        dateFormatter.dateFormat = "HH:mm:ss.SSS"
+        return dateFormatter.string(from: date)
+    }
     
     func getHour() -> String {
         dateFormatter.dateFormat = "HH"
@@ -92,6 +98,18 @@ struct Stopwatch: View {
         return dateFormatter.string(from: currentDate)
     }
 }
+
+struct LapRow: View {
+    let lap: String
+    
+    var body: some View {
+        Text(lap)
+            .transition(.move(edge: .top))
+            .animation(.default)
+    }
+}
+
+
 
 extension Date: Identifiable {
     public var id: String { description }
