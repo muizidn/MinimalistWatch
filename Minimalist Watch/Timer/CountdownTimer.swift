@@ -99,21 +99,7 @@ private struct CountdownTimerBody: View {
                 }
                 .font(.largeTitle)
                 AddOneMinute()
-                if !vm.isCountingDown {
-                    if case .custom = vm.timerPresets[vm.selectedPreset] {
-                        Button(vm.isEditingCustomTimer ? "Done" : "Edit") {
-                            vm.isEditingCustomTimer.toggle()
-                        }
-                        .font(.callout)
-                        .padding()
-                    }
-                    Picker("Select Time", selection: $vm.selectedPreset) {
-                        ForEach(vm.timerPresets.indices, id: \.self) { i in
-                            Text(vm.timerPresets[i].description).tag(i)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                }
+                PresetSelection()
             }
             .padding()
         }
@@ -122,18 +108,60 @@ private struct CountdownTimerBody: View {
     struct AddOneMinute: View {
         @EnvironmentObject var vm: CountdownTimerViewModel
         var body: some View {
-            if vm.isCountingDown {
-                Button("+1 Minute") {
-                    vm.addOneMinute()
-                }
-                .font(.title)
-                .padding()
-            } else {
-                EmptyView()
+            Button("+1 Minute") {
+                vm.addOneMinute()
             }
+            .font(.title)
+            .padding()
+            .setHidden(!vm.isCountingDown)
+        }
+    }
+    
+    struct PresetSelection: View {
+        @EnvironmentObject var vm: CountdownTimerViewModel
+        var body: some View {
+            VStack {
+                EditCustomPreset()
+                Picker("Select Time", selection: $vm.selectedPreset) {
+                    ForEach(vm.timerPresets.indices, id: \.self) { i in
+                        Text(vm.timerPresets[i].description).tag(i)
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+            }
+            .setHidden(vm.isCountingDown)
+        }
+    }
+    
+    struct EditCustomPreset: View {
+        @EnvironmentObject var vm: CountdownTimerViewModel
+        var body: some View {
+            Button(vm.isEditingCustomTimer ? "Done" : "Edit") {
+                vm.isEditingCustomTimer.toggle()
+            }
+            .font(.callout)
+            .padding()
+            .setHidden(isHidden)
+        }
+        
+        private var isHidden: Bool {
+            if case .custom = vm.timerPresets[vm.selectedPreset] {
+                return false
+            }
+            return true
         }
     }
 }
+
+extension View {
+    func setHidden(_ bool: Bool) -> some View {
+        if bool {
+            return AnyView(self.hidden().frame(width: 0,height: 0))
+        }
+        return AnyView(self)
+    }
+}
+
 
 extension Int: Identifiable {
     public var id: String {
